@@ -1,0 +1,16 @@
+{% extends 'partials/_base.html' %}
+
+{% load static %}
+
+{% block titulo %}Home{% endblock %}
+
+{% block content %}
+    <h1>Encurta</h1>
+
+    <form action="">
+        <label for="campo-link">Link</label>
+        <input type="text" required>
+
+        <button type="submit">Encurtar</button>
+    </form>
+{% endblock %}
