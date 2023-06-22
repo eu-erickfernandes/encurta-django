@@ -10,7 +10,7 @@
 {% block titulo %}Cadastro{% endblock %}
 
 {% block content %}
-    <h1>Cadastro</h1>
+    <h1 class="main__titulo">Cadastro</h1>
 
     <form action="{% url 'usuario:cadastro' %}" method="POST">
         {% csrf_token %}
