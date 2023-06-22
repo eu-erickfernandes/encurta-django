@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from django.http import HttpRequest
 from typing import Tuple, List
 
-def cadastrar_usuario(request: HttpRequest) -> Tuple[User, List]:
+def cadastrar_usuario(request: HttpRequest):
     nome = request.POST.get('nome')
     email = request.POST.get('email')
     nome_usuario = request.POST.get('nome-usuario')
@@ -22,9 +22,9 @@ def cadastrar_usuario(request: HttpRequest) -> Tuple[User, List]:
         password= senha
     )
 
-    # usuario.save()
+    login(request, usuario)
 
-    print('cheguei aqui', usuario)
+    return usuario
 
 
 def entrar(request: HttpRequest):

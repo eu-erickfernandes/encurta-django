@@ -7,23 +7,15 @@
 {% block content %}
     <h1 class="main__titulo">Meus links</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>URL</th>
-                <th>Quantidade de acessos</th>
-            </tr>
-        </thead>
+    {% for link in links %}
+        <div class="grupo">
+            <h2 class="texto--20">#{{ link.id }}</h2>
 
-        <tbody>
-            {% for link in links %}
-                <tr>
-                    <td>{{ link.id }}</td>
-                    <td>{{ link.url.url }}</td>
-                    <td>{{ link.qtd_acessos }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            <p>URL: <a href="{{ link.url.url }}" class="link">{{ link.url.url }}</a></p>
+
+            {% if link.qtd_acessos %}
+                <p class="texto--12 texto--cinza">{{ link.qtd_acessos }} acessos</p>
+            {% endif %}
+        </div>
+    {% endfor %}
 {% endblock %}

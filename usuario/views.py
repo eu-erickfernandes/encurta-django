@@ -13,7 +13,7 @@ def cadastro(request):
     if request.method == 'POST':
         novo_usuario = cadastrar_usuario(request)
 
-
+        return redirect('/')
 
     return render(request, template_name)
 
@@ -23,6 +23,8 @@ def login(request):
 
     if request.POST:
         entrar(request)
+
+        return redirect('/')
 
     return render(request, template_name)
 

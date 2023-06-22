@@ -9,31 +9,18 @@
 
         <title>Encurta | {% block titulo %}{% endblock %}</title>
 
-        <!-- <link rel="stylesheet" href="{% static 'assets/css/base/cores.css' %}"> -->
-        <link rel="stylesheet" href="{% static 'assets/tipografia.css' %}">
-        <!-- <link rel="stylesheet" href="{% static 'assets/css/base/base.css' %}"> -->
+        <link rel="stylesheet" href="{% static 'assets/css/base/reset.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/base/cores.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/base/tipografia.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/base/base.css' %}">
 
-        <!-- <link rel="stylesheet" href="{% static 'assets/css/module/botao.css' %}"> -->
-        <!-- <link rel="stylesheet" href="{% static 'assets/css/module/formulario.css' %}"> -->
-        <!-- <link rel="stylesheet" href="{% static 'assets/css/module/menu.css' %}"> -->
+        <link rel="stylesheet" href="{% static 'assets/css/module/botao.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/module/formulario.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/module/menu.css' %}">
     </head>
 
     <body>
-        {% if request.user.id %}
-            <p>Bem vindo {{ request.user }}</p>
-        {% endif %}
-
-        <nav>
-            <a href="{% url 'encurta:index' %}">Home</a>
-            <a href="{% url 'usuario:login' %}">Login</a>
-            <a href="{% url 'usuario:logout' %}">Logout</a>
-            <a href="{% url 'usuario:cadastro' %}">Cadastro</a>
-            <a href="{% url 'usuario:usuarios' %}">Usuários</a>
-            <a href="{% url 'usuario:meus-links' %}">Meus links</a>
-        </nav>
-
         <main>
-
             {% block content %}{% endblock %}
         </main>
     </body>

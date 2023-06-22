@@ -1,0 +1,18 @@
+label{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--cor-cinza);
+    font-size: 1rem;
+    font-weight: 500;
+    padding-block: .5rem;
+    outline: none;
+}
+
+input::placeholder{
+    color: var(--cor-cinza);
+}

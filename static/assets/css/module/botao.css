@@ -1,0 +1,6 @@
+.botao{
+    background-color: var(--cor-verde);
+    border: none;
+    border-radius: .5rem;
+    padding-block: .5rem;
+}

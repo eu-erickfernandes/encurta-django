@@ -10,16 +10,16 @@
     <form action="{% url 'usuario:login' %}" method="POST" autocomplete="off">
         {% csrf_token %}
 
-        <div class="formulario-grupo">
+        <div class="grupo">
             <label for="campo-nome-usuario">Nome de usuário</label>
             <input id="campo-nome-usuario" type="text" name="nome-usuario" required>
         </div>
         
-        <div class="formulario-grupo">
+        <div class="grupo">
             <label for="campo-senha">Senha</label>
             <input id="campo-senha" type="password" name="senha" required>
         </div>
 
-        <button type="submit">Salvar</button>
+        <button class="botao" type="submit">Entrar</button>
     </form>
 {% endblock %}

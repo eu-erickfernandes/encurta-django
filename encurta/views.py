@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from encurta.models import Link, Url
+from setup.settings import BASE_DIR
+
 from encurta.actions import encurta_link
+from encurta.models import Link, Url
 
 # Create your views here.
 def index(request):
-    print(request.user)
+    base = BASE_DIR
     links_gerados = Link.objects.all()
     qtd_links_gerados = links_gerados.count()
 

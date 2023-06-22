@@ -12,6 +12,6 @@ class Url(models.Model):
         return Link.objects.filter(url= self).count()
 
 class Link(models.Model):
-    usuario = models.ForeignKey(User, on_delete= models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete= models.CASCADE, null= True)
     url = models.ForeignKey(Url, on_delete= models.CASCADE)
     qtd_acessos = models.IntegerField(default= 0)

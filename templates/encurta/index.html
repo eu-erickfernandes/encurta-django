@@ -7,17 +7,15 @@
 {% block content %}
     <h1 class="main__titulo">Encurta</h1>
 
-    <h2>Novo link</h2>
-
     <form action="{% url 'encurta:index' %}" method="POST">
         {% csrf_token %}
         
-        <div class="formulario-grupo">
-            <label for="campo-url">URL</label>
-            <input type="text" required name="url">
+        <div class="grupo">
+            <label for="campo-url">Insira uma URL</label>
+            <input type="text" name="url" placeholder="Ex: https://www.google.com" required>
         </div>
 
-        <button type="submit">Encurtar</button>
+        <button class="botao" type="submit">Encurtar</button>
     </form>
 
     <h2>URLs cadastradas ({{ qtd_urls_geradas }})</h2>

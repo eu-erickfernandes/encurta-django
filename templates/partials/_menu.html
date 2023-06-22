@@ -1,0 +1,19 @@
+<div class="menu__container">
+    <nav class="menu">
+        <a href="{% url 'encurta:index' %}">Home - {{ request.user }}</a>
+
+        {% if not request.user.id %}
+            <a href="{% url 'usuario:login' %}">Entrar</a>
+            <a href="{% url 'usuario:cadastro' %}">Cadastro</a>
+        {% endif %}
+
+        <a href="{% url 'usuario:usuarios' %}">Usuários</a>
+
+        {% if request.user.id %}
+            <a href="{% url 'usuario:meus-links' %}">Meus links</a>
+            <a href="{% url 'usuario:logout' %}">Sair</a>
+        {% endif %}
+    </nav>
+
+    <button type="button" class="menu__botao"></button>
+</div>
