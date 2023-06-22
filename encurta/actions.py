@@ -12,3 +12,5 @@ def encurta_link(request):
     novo_link.usuario = usuario
 
     novo_link.save()
+
+    return novo_link

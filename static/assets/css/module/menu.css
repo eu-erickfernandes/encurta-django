@@ -1,5 +1,14 @@
-main:has(menu){
+:has(.menu__container){
     position: relative;
+}
+
+.menu__container{
+    align-items: flex-end;
+    bottom: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    right: 1.5rem;
 }
 
 .menu{
@@ -9,8 +18,11 @@ main:has(menu){
     flex-direction: column;
     gap: 1px;
     overflow: hidden;
-    position: absolute;
     top: 0;
+}
+
+.menu.oculto{
+    display: none;
 }
 
 .menu a{
@@ -21,4 +33,12 @@ main:has(menu){
     padding-left: 1rem;
     padding-right: 2rem;
     text-decoration: none;
+}
+
+.menu__botao{
+    aspect-ratio: 1;
+    background-size: cover;
+    border: none;
+    border-radius: 100vw;
+    width: 3.5rem;
 }

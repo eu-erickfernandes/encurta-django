@@ -1,13 +1,15 @@
+{% load static %}
+
 <div class="menu__container">
-    <nav class="menu">
-        <a href="{% url 'encurta:index' %}">Home - {{ request.user }}</a>
+    <nav class="menu oculto" data-menu>
+        <a href="{% url 'encurta:index' %}">Home</a>
 
         {% if not request.user.id %}
             <a href="{% url 'usuario:login' %}">Entrar</a>
             <a href="{% url 'usuario:cadastro' %}">Cadastro</a>
         {% endif %}
 
-        <a href="{% url 'usuario:usuarios' %}">Usuários</a>
+        <!-- <a href="{% url 'usuario:usuarios' %}">Usuários</a> -->
 
         {% if request.user.id %}
             <a href="{% url 'usuario:meus-links' %}">Meus links</a>
@@ -15,5 +17,16 @@
         {% endif %}
     </nav>
 
-    <button type="button" class="menu__botao"></button>
+    <button 
+        type="button" 
+        class="menu__botao"
+        data-menu-botao
+
+        {% if request.user.id %}
+            style="background-image: url( {% static 'assets/img/joao.jpg' %} );"
+        {% else %}
+            style="background-image: url( {% static 'assets/img/Account cricle.svg' %} );"
+        {% endif %}
+    >    
+    </button>
 </div>

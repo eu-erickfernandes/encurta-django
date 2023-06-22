@@ -1,0 +1,9 @@
+<dialog class="modal modal--confirmacao" data-modal="sucesso">
+    <b>URL encurtada com sucesso</b>
+
+    <div class="grupo">
+        <p class="texto--12">Link gerado</p>
+
+        <a href="{% url 'encurta:link' link.id %}">https://enc.com/{{ link.id }}</a>
+    </div>
+</dialog>

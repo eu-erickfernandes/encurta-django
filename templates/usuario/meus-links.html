@@ -9,7 +9,7 @@
 
     {% for link in links %}
         <div class="grupo">
-            <h2 class="texto--20">#{{ link.id }}</h2>
+            <h2 class="texto--20"># <a href="{% url 'encurta:link' link.id %}">enc.io/{{ link.id }}</a></h2>
 
             <p>URL: <a href="{{ link.url.url }}" class="link">{{ link.url.url }}</a></p>
 

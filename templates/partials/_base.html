@@ -17,11 +17,17 @@
         <link rel="stylesheet" href="{% static 'assets/css/module/botao.css' %}">
         <link rel="stylesheet" href="{% static 'assets/css/module/formulario.css' %}">
         <link rel="stylesheet" href="{% static 'assets/css/module/menu.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/module/modal.css' %}">
     </head>
 
     <body>
         <main>
             {% block content %}{% endblock %}
         </main>
+        
+        {% include 'partials/_menu.html' %}
+        
+        <script src="{% static 'assets/js/menu.js' %}"></script>
+        <script src="{% static 'assets/js/modal.js' %}"></script>
     </body>
 </html>

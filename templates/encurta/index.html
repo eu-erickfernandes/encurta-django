@@ -18,7 +18,14 @@
         <button class="botao" type="submit">Encurtar</button>
     </form>
 
-    <h2>URLs cadastradas ({{ qtd_urls_geradas }})</h2>
+    {% if link %}
+        {% include 'encurta/partials/_modal-sucesso.html' %}
+    {% endif %}
+    
+    {% comment %}
+    
+
+    <!-- <h2>URLs cadastradas ({{ qtd_urls_geradas }})</h2>
 
     <table>
         <thead>
@@ -60,5 +67,6 @@
                 </tr>
             {% endfor %}
         </tbody>
-    </table>
+    </table> -->
+    {% endcomment %}
 {% endblock %}

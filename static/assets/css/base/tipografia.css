@@ -18,6 +18,10 @@ body, body *{
     font-size: 1.25rem;
 }
 
+b{
+    font-weight: bold;
+}
+
 .texto--cinza{
     color: var(--cor-cinza);
 }
