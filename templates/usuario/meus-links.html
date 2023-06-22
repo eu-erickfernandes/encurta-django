@@ -1,0 +1,29 @@
+{% extends 'partials/_base.html' %}
+
+{% load static %}
+
+{% block titulo %}Meus links{% endblock %}
+
+{% block content %}
+    <h1>Meus links</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>URL</th>
+                <th>Quantidade de acessos</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for link in links %}
+                <tr>
+                    <td>{{ link.id }}</td>
+                    <td>{{ link.url.url }}</td>
+                    <td>{{ link.qtd_acessos }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

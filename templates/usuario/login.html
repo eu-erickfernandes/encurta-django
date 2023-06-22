@@ -7,5 +7,19 @@
 {% block content %}
     <h1>Login</h1>
 
-    <form action=""></form>
+    <form action="{% url 'usuario:login' %}" method="POST" autocomplete="off">
+        {% csrf_token %}
+
+        <div class="formulario-grupo">
+            <label for="campo-nome-usuario">Nome de usuário</label>
+            <input id="campo-nome-usuario" type="text" name="nome-usuario" required>
+        </div>
+        
+        <div class="formulario-grupo">
+            <label for="campo-senha">Senha</label>
+            <input id="campo-senha" type="password" name="senha" required>
+        </div>
+
+        <button type="submit">Salvar</button>
+    </form>
 {% endblock %}

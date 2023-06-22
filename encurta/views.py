@@ -4,7 +4,7 @@ from encurta.actions import encurta_link
 
 # Create your views here.
 def index(request):
-
+    print(request.user)
     links_gerados = Link.objects.all()
     qtd_links_gerados = links_gerados.count()
 
@@ -26,6 +26,7 @@ def index(request):
 def link(request, id_link):
     link = get_object_or_404(Link, id= id_link)
 
-    print(link.url.url)
+    link.qtd_acessos += 1
+    link.save()
 
     return redirect(link.url.url)

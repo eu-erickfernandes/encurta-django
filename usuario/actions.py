@@ -1,9 +1,11 @@
 # TODO:
 # -Validar
 
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.models import User
+
 from django.http import HttpRequest
 from typing import Tuple, List
-from django.contrib.auth.models import User
 
 def cadastrar_usuario(request: HttpRequest) -> Tuple[User, List]:
     nome = request.POST.get('nome')
@@ -23,3 +25,18 @@ def cadastrar_usuario(request: HttpRequest) -> Tuple[User, List]:
     # usuario.save()
 
     print('cheguei aqui', usuario)
+
+
+def entrar(request: HttpRequest):
+    nome_usuario = request.POST.get('nome-usuario')
+    senha = request.POST.get('senha')
+
+    usuario = authenticate(username= nome_usuario, password= senha)
+
+    if usuario:
+        login(request, usuario)
+    
+    return usuario
+
+def sair(request: HttpRequest):
+    logout(request)

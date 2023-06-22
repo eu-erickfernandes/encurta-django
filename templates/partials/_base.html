@@ -10,11 +10,17 @@
     </head>
 
     <body>
+        {% if request.user.id %}
+            <p>Bem vindo {{ request.user }}</p>
+        {% endif %}
+
         <nav>
             <a href="{% url 'encurta:index' %}">Home</a>
             <a href="{% url 'usuario:login' %}">Login</a>
+            <a href="{% url 'usuario:logout' %}">Logout</a>
             <a href="{% url 'usuario:cadastro' %}">Cadastro</a>
             <a href="{% url 'usuario:usuarios' %}">Usuários</a>
+            <a href="{% url 'usuario:meus-links' %}">Meus links</a>
         </nav>
 
         <main>

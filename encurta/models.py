@@ -1,3 +1,5 @@
+from django.contrib.auth.models import User
+
 from django.db import models
 
 class Url(models.Model):
@@ -10,5 +12,6 @@ class Url(models.Model):
         return Link.objects.filter(url= self).count()
 
 class Link(models.Model):
-    url = models.ForeignKey(Url, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(User, on_delete= models.CASCADE)
+    url = models.ForeignKey(Url, on_delete= models.CASCADE)
     qtd_acessos = models.IntegerField(default= 0)
