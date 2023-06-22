@@ -1,1 +1,1 @@
-# Encurtador de links com Django
+# Encurtador de URLs com Django
