@@ -7,10 +7,60 @@
 {% block content %}
     <h1>Encurta</h1>
 
-    <form action="">
-        <label for="campo-link">Link</label>
-        <input type="text" required>
+    <h2>Novo link</h2>
+
+    <form action="{% url 'encurta:index' %}" method="POST">
+        {% csrf_token %}
+        
+        <div class="formulario-grupo">
+            <label for="campo-url">URL</label>
+            <input type="text" required name="url">
+        </div>
 
         <button type="submit">Encurtar</button>
     </form>
+
+    <h2>URLs cadastradas ({{ qtd_urls_geradas }})</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>URL</th>
+                <th>Quantidade de links</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for url in urls %}
+                <tr>
+                    <td>{{ url.id }}</td>
+                    <td>{{ url.url }}</td>
+                    <td>{{ url.get_qtd_links }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Links gerados ({{ qtd_links_gerados }})</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>URL</th>
+                <th>Quantidade de acessos</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for link in links_gerados %}
+                <tr>
+                    <td>{{ link.id }}</td>
+                    <td>{{ link.url.url }}</td>
+                    <td>{{ link.qtd_acessos }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

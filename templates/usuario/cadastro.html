@@ -1,0 +1,40 @@
+TODO:
+-Confirmar senha
+-Validar
+
+
+{% extends 'partials/_base.html' %}
+
+{% load static %}
+
+{% block titulo %}Cadastro{% endblock %}
+
+{% block content %}
+    <h1>Cadastro</h1>
+
+    <form action="{% url 'usuario:cadastro' %}" method="POST">
+        {% csrf_token %}
+        
+        <div class="formulario-grupo">
+            <label for="campo-nome">Nome</label>
+            <input id="campo-nome" type="text" name="nome" required>
+        </div>
+        
+        <div class="formulario-grupo">
+            <label for="campo-email">E-mail</label>
+            <input id="campo-email" type="email" name="email" required>
+        </div>
+        
+        <div class="formulario-grupo">
+            <label for="campo-nome-usuario">Nome de usuário</label>
+            <input id="campo-nome-usuario" type="text" name="nome-usuario" required>
+        </div>
+        
+        <div class="formulario-grupo">
+            <label for="campo-senha">Senha</label>
+            <input id="campo-senha" type="password" name="senha" required>
+        </div>
+
+        <button type="submit">Salvar</button>
+    </form>
+{% endblock %}
