@@ -6,6 +6,7 @@
 
 * Criar virtualenv e iniciar
 > virtualenv venv
+
 > .venv/script/activate
 
 * Instalar dependências
@@ -13,5 +14,7 @@
 
 ## Rodando o projeto
 > python manage.py makemigrations
+
 > python manage.py migrate
+
 > python manage.py runserver
