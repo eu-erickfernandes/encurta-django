@@ -10,7 +10,7 @@
 > .venv/script/activate
 
 * Instalar dependências
-> $ pip install -r requiremnts.txt
+> $ pip install -r requirements.txt
 
 ## Rodando o projeto
 > python manage.py makemigrations
